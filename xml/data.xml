@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <userdata> 
-
+  <user> 
+    <username>coder</username>  
+    <userwords>测测测测测测</userwords>  
+    <time>2016年10月12日 00:23:30</time> 
+  </user>  
+  <user>
+    <username>coder</username>
+    <userwords>试试试试试试</userwords>
+    <time>2016年10月12日 00:24:35</time>
+  </user>
 </userdata>
