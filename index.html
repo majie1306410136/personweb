@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="img/t.ico">
+	<title>personweb</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<style>
+		body{
+			margin: 0;
+			padding: 0;;
+		}
+		.container{
+			width: 100%;
+			background-image: url("img/7.jpg");
+			background-size: 100% 100%;
+			overflow: hidden;
+		}
+		.have{
+			width: 100%;
+			height: 675px;
+			overflow: hidden;
+		}
+		.titles{
+			width: 13%;
+			height: 80px;
+			float: left;
+			margin-left: 20px;
+			margin-top: 20px;
+			background-color: rgba(142,142,142,0.5);
+			text-align: center;
+			line-height: 80px;
+			transition: all 0.4s ease-in-out;
+			font-family: "微软雅黑";
+			font-weight: bold;
+			border-radius: 5px;
+		}
+		.texts{
+			margin-left: 22%;
+		}
+		.titles:hover{
+			background-color: rgba(255,255,255,0.6) !important;
+			color: #9D0503 !important;
+		}
+		.min{
+			display: none;
+			width: 13%;
+			height: 5%;
+			margin-left: 46%;
+		}
+		@media screen and (max-width: 966px){
+			.titles{
+				transform: rotateY(90deg);
+				transition: all 0.4s ease-in-out;
+				clear: left;
+				height: 30px;
+				margin-top: 0;
+				margin-left: 46%;
+				line-height: 200%
+
+			}
+			.texts{
+				margin-left: 46%;
+			}
+			.min{
+				display: block;
+				transform: rotateY(0deg);
+				margin-top: 20px;
+			}
+			
+		}
+		.bodyer1{
+			transition: all 0.4s ease-in-out;
+			width: 80%;
+			height: 50%;
+			margin-top: 170px;
+			margin-left: 10%;
+			border-radius: 5px;
+			background-image: url("img/15.jpg");
+			background-repeat: repeat;
+			opacity: 0.8;
+			text-align: center;
+			color:#950303;
+			font-family: "微软雅黑";
+		}
+		.writer{
+			transition: all 0.4s ease-in-out;
+			width: 80%;
+			height: 12%;
+			margin-left: 10%;
+			font-family: "宋体";
+			font-weight: bold;
+			background-image: url("img/14.jpg");
+			background-size: 100% 100%;
+			border-radius: 5px;
+		}
+		table{
+			width: 100%;
+			height: 100%;
+		}
+		.btn { 
+			display: inline-block; 
+			zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */ 
+			display: inline; 
+			vertical-align: baseline; 
+			margin: 0 2px; 
+			outline: none; 
+			cursor: pointer; 
+			text-align: center; 
+			text-decoration: none; 
+			font: 14px/100% Arial, Helvetica, sans-serif; 
+			padding: .5em 2em .55em; 
+			text-shadow: 0 1px 1px rgba(0,0,0,.3); 
+			-webkit-border-radius: .5em; 
+			-moz-border-radius: .5em; 
+			border-radius: .5em; 
+			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+			-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+			box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+			color: #d7d7d7; 
+			border: solid 1px #333; 
+			background: #333; 
+			background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000)); 
+			background: -moz-linear-gradient(top, #666, #000); 
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000'); 
+
+		} 
+		.btn:hover { 
+		 	text-decoration: none;
+		 	background: #000;  
+		    background: -webkit-linear-gradient(#444, #000);
+		    background: -o-linear-gradient(#444, #000);
+		    background: linear-gradient(#444, #000); 
+		 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#000000'); 
+		 
+		} 
+		.btn:active { 
+			position: relative; 
+			top: 1px;
+			color: #666; 
+			background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#444)); 
+            background: -moz-linear-gradient(top, #000, #444); 
+		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#666666'); 
+ 
+		} 
+		#writer{
+			width: 50%;
+		}
+		.content{
+			transform: scale(0.7);
+			transition: all 0.6s ease-in-out;
+			height: 19%;
+			float: left;
+			line-height: 0;
+			font-size: 3px;
+			background-image: url("img/12.png");
+			background-repeat: repeat-x;
+			color: #FFF;
+			border-radius: 5px;			
+		}
+		.content:hover {
+			transform: scale(1);
+			z-index: 10;
+		}
+		.photowall {
+			display: none;
+			transition: all 0.4s ease-in-out;
+			width: 80%;
+			height: 70%;
+			margin-top: -420px;
+			margin-left: 10%;
+			border-radius: 5px;
+			position: relative;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.cue1 {
+			width: 92%;
+			height: 30px;
+			position: absolute;
+			left: 4%;
+			text-align: center;
+			font-family: "微软雅黑";
+			color: #FFF;
+		}
+		.cue3 {
+			display: none;
+			width: 92%;
+			height: 30px;
+			position: absolute;
+			left: 4%;
+			text-align: center;
+			font-family: "微软雅黑";
+			color: #FFF;
+		}
+		.picture1 {
+			width: 30%;
+			height: 400px;
+			position: absolute;
+			margin-left: 4%;
+			top: 7%;
+			background-image: url("img/11.jpg");
+			background-size: 100% 100%;
+		}
+		.picture2 {
+			width: 30%;
+			height: 400px;
+			position: absolute;
+			left: 35%;
+			top: 7%;
+			background-image: url("img/12.jpg");
+			background-size: 100% 100%;
+		}
+		.picture3 {
+			width: 30%;
+			height: 400px;
+			position: absolute;
+			left: 66%;
+			top: 7%;
+			background-image: url("img/8.jpg");
+			background-size: 100% 100%;
+		}
+		.cue2 {
+			display: none;
+			width: 92%;
+			height: 30px;
+			position: absolute;
+			left: 4%;
+			top: 433px;
+			text-align: center;
+			font-family: "微软雅黑";
+			color: #FFF;
+		}
+		.pic {
+			width: 100%;
+			height: 100%;
+			border: 1px solid #000;
+			background-image: url("img/17.gif");
+			background-size: 100% 100%;
+			position: relative;
+			transform: rotateY(90deg);
+			transition: all 0.4s ease-in-out;
+		}
+		.picture1 .pic .box {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			background-image: url("img/11.jpg");
+			background-size: 300px 400px;
+		}
+		.picture2 .pic .box {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			background-image: url("img/12.jpg");
+			background-size: 300px 400px;
+		}
+		.picture3 .pic .box {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			background-image: url("img/8.jpg");
+			background-size: 300px 400px;
+		}
+		.wait {
+			transition: all 0.4s ease-in-out;
+			transform: rotateY(90deg);
+			width: 80%;
+			height: 70%;
+			margin-top: -420px;
+			margin-left: 10%;
+			border-radius: 5px;
+			position: relative;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.explain {
+			transition: all 0.4s ease-in-out;
+			transform: rotateY(90deg);
+			width: 80%;
+			height: 70%;
+			margin-top: -473px;
+			margin-left: 10%;
+			border-radius: 5px;
+			position: relative;
+			text-align: center;
+			font-family: "微软雅黑";
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="have">
+			<div class="titles min" onclick="fun1()">open/close</div>
+			<div class="titles texts" onclick="fun(this);">留言</div>
+			<div class="titles photo" onclick="fun(this);">相册</div>
+			<div class="titles waiting" onclick="fun(this);">待定</div>
+			<div class="titles about" onclick="fun(this);">关于</div>
+			<div class="bodyer1" id="wall">
+				<h2>你说吧 又有知道呢</h2>
+			</div>
+			<div class="writer">
+				<form action="/personweb/servlet" method="post">
+					<table>
+						<tr>
+							<th>昵称<input type="text" id="author" name="userName" value=""></th>
+							<td style="text-align:right">文本</td>
+							<td><textarea id="writer" cols="50" rows="4" name="words" value=""></textarea></td>
+							<td><input type="submit" value="发布" class="btn"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="photowall">
+				<div class="cue1">点击图片 闪瞎你的眼</div>
+				<div class="cue3">在照片上滑动鼠标</div>
+				<div class="picture1" onclick="change1(this)">
+					<div class="pic"></div>
+				</div>
+				<div class="picture2" onclick="change2(this)">
+					<div class="pic"></div>
+				</div>
+				<div class="picture3" onclick="change3(this)">
+					<div class="pic"></div>
+				</div>
+				<div class="cue2">知道怎么回去吗？再点一下试试</div>
+			</div>
+			<div class="wait"></div>
+			<div class="explain">
+				<h3>这个家伙很懒什么都没留下<br>╭（╯_╰）╭</h3>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/main.js"></script>
+<script src="js/setphoto.js"></script>
+</html>
